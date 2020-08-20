@@ -7,5 +7,3 @@ This game can be played by 1 player or 2 players.
 
 # Warning!
 This game requiered joysticks or else cannot be played.
-
-The game will be soon here...
