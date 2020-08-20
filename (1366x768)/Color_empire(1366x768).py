@@ -239,7 +239,7 @@ while game:
                             else:
                                 draw_text("Not enought joysticks!", font ,40, RED,WIDTH/2 , HEIGHT / 2 + 120)
                         if joystick1.get_button(1)==1:
-                            if nb_joystick >= 2:
+                            if nb_joysticks >= 2:
                                 choose = False
                                 players = 1
                             else:
@@ -262,7 +262,7 @@ while game:
                         pass
                     try:
                         if joystick1.get_button(1)==1:
-                            if nb_joystick >= 2:
+                            if nb_joysticks >= 2:
                                 choose = False
                                 players = 2
                             else:
