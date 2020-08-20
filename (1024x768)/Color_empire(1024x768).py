@@ -40,8 +40,6 @@ while game:
 
 
     nb_joysticks = pg.joystick.get_count()
-    if nb_joysticks >= 2:
-        print("hello")
 
     try:
         joystick0 = pg.joystick.Joystick(0)
