@@ -2,6 +2,8 @@
 To players game developed with pygame.
 Cover more of your color to win the game.
 
+RELEASE 1920x1080 WILL COME SOON
+
 # Can be played
 This game can be played by 1 player or 2 players.
 
