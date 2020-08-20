@@ -25,7 +25,7 @@ while game:
     WHITE = (255, 255, 255)
     BROWN = (255, 153, 51)
     FPS = 25
-    WIDTH = 1024
+    WIDTH = 1023
     HEIGHT = 768
 
     pg.init()
@@ -66,34 +66,34 @@ while game:
 
     map_world = []
 
-    for i in range(364):
+    for i in range(391):
         map_world.append("0")
         
     def player2_draw(x_pos,y_pos):
-        lagX = (x_pos*49)+42
-        lagY = (y_pos*49)+42
-        pg.draw.rect(screen, GREEN2, (1+lagX, 1+lagY, 49, 49))
+        lagX = (x_pos*41)+42
+        lagY = (y_pos*41)+42
+        pg.draw.rect(screen, GREEN2, (1+lagX, 1+lagY, 41, 41))
 
     def player1_draw(x_pos,y_pos):
-        lagX = (x_pos*49)+42
-        lagY = (y_pos*49)+42
-        pg.draw.rect(screen, RED, (1+lagX, 1+lagY, 49, 49))
+        lagX = (x_pos*41)+42
+        lagY = (y_pos*41)+42
+        pg.draw.rect(screen, RED, (1+lagX, 1+lagY, 41, 41))
         
     def draw_map(map_object):
-        for i in range(14):
-            for j in range(19):
-                case_num = (i*19)+j
+        for i in range(17):
+            for j in range(23):
+                case_num = (i*23)+j
                 if map_object[case_num] == "0":
                     color = WHITE
-                    pg.draw.rect(screen, color, (43+j*49, 43+i*49, 49, 49 )) 
+                    pg.draw.rect(screen, color, (43+j*41, 43+i*41, 41, 41)) 
 
     def update_score(map_object):
         global score_for_calculs1, score_for_calculs2
         score_for_calculs1 = 0
         score_for_calculs2 = 0
-        for i in range(14):
-            for j in range(19):
-                case_num = (i*19)+j
+        for i in range(17):
+            for j in range(23):
+                case_num = (i*23)+j
                 if map_object[case_num] == "1":
                     score_for_calculs1 += 1
                 elif map_object[case_num] == "2":
@@ -101,9 +101,9 @@ while game:
                 
                 
     def draw_objects(map_object):
-        for i in range(14):
-            for j in range(19):
-                case_num = (i*19)+j
+        for i in range(17):
+            for j in range(23):
+                case_num = (i*23)+j
                 if map_object[case_num] == "1":
                     player1_draw(j,i)
                 elif map_object[case_num] == "2":
@@ -112,18 +112,18 @@ while game:
     def count(map_object):
         score1 = 0
         score2 = 0
-        for i in range(14):
-            for j in range(19):
-                case_num = (i*19)+j
+        for i in range(17):
+            for j in range(23):
+                case_num = (i*23)+j
                 if map_object[case_num] == "1":
                     score1 += 1
                 elif map_object[case_num] == "2":
                     score2 += 1
                     
     def draw_cursor(x_pos, y_pos):
-        pg.draw.rect(screen, (250, 0, 0),(43+x_pos*49, 43+y_pos*49, 49, 49), 5)
+        pg.draw.rect(screen, (250, 0, 0),(43+x_pos*41, 43+y_pos*41, 41, 41), 5)
     def draw_cursor2(x_pos1, y_pos1):
-        pg.draw.rect(screen, (0, 100, 0),(43+x_pos1*49, 43+y_pos1*49, 49, 49), 5)
+        pg.draw.rect(screen, (0, 100, 0),(43+x_pos1*41, 43+y_pos1*41, 41, 41), 5)
         
     def draw_text(text, font_name, size, color, x, y):
         font = pg.font.Font(font_name, size)
@@ -332,18 +332,6 @@ while game:
                 elif event.type == pg.KEYDOWN:
                     if event.key == pg.K_ESCAPE:
                         pg.quit()
-                    if event.key == pg.K_UP:
-                        if y_pos > 0:
-                            y_pos -= 1
-                    if event.key == pg.K_DOWN:
-                        if y_pos < 15:
-                            y_pos += 1
-                    if event.key == pg.K_RIGHT:
-                        if x_pos < 18:
-                            x_pos += 1
-                    if event.key == pg.K_LEFT:
-                        if x_pos > 0:
-                            x_pos -= 1
                         
         try:
             axis0 = joystick0.get_axis(0)
@@ -352,36 +340,36 @@ while game:
             pass
         try:
             if joystick0.get_button(1)==1:
-                index = (y_pos*19)+x_pos
+                index = (y_pos*23)+x_pos
                 map_world[index]="1"
                 
             if axis1 > 0.5:
-                if y_pos < 13:
+                if y_pos < 16:
                     y_pos += 1
             if axis1 < -0.5:
                 if y_pos > 0:
                     y_pos -= 1
             if axis0 > 0.5:
-                if x_pos < 18:
+                if x_pos < 22:
                     x_pos += 1
             if axis0 < -0.5:
                 if x_pos > 0:
                     x_pos -= 1
             if players == 2:    
                 if joystick1.get_button(1)==1:
-                    index = (y_pos1*19)+x_pos1
+                    index = (y_pos1*23)+x_pos1
                     map_world[index]="2"
                     
                 axis0 = joystick1.get_axis(0)
                 axis1 = joystick1.get_axis(1)
                 if axis1 > 0.5:
-                    if y_pos1 < 13:
+                    if y_pos1 < 16:
                         y_pos1 += 1
                 if axis1 < -0.5:
                     if y_pos1 > 0:
                         y_pos1 -= 1
                 if axis0 > 0.5:
-                    if x_pos1 < 18:
+                    if x_pos1 < 22:
                         x_pos1 += 1
                 if axis0 < -0.5:
                     if x_pos1 > 0:
@@ -422,8 +410,8 @@ while game:
             draw_cursor2(x_pos1, y_pos1)
             draw_cursor(x_pos, y_pos)
         if players == 2:
-            draw_text(str(score1), font ,80, (255, 0, 0),240, HEIGHT - 150)            
-            draw_text(str(score2), font ,80, (0, 100, 0),WIDTH - 240, HEIGHT - 150)
+            draw_text(str(score1), font ,80, (255, 0, 0),230, HEIGHT - 150)            
+            draw_text(str(score2), font ,80, (0, 100, 0),WIDTH - 230, HEIGHT - 150)
         else:
             draw_text(str(score1), font ,80, (255, 0, 0),WIDTH / 2, 42)
         if round_time >= 0:
