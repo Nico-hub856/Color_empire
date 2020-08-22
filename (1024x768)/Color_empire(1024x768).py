@@ -32,7 +32,7 @@ while game:
     pg.mixer.init()
     pg.joystick.init()
     screen = pg.display.set_mode((WIDTH, HEIGHT))
-    pg.display.set_caption("whiteboard")
+    pg.display.set_caption("Color empire")
     #screen = pg.display.set_mode((WIDTH, HEIGHT),pg.FULLSCREEN)
     clock = pg.time.Clock()
 
@@ -149,7 +149,7 @@ while game:
                 
             if select == 1:
                 if party_num == 1:
-                    draw_text("WHITEBOARD", font ,60, BLACK,WIDTH/2 , 180 - 40)
+                    draw_text("Color empire", font ,60, BLACK,WIDTH/2 , 180 - 40)
                 if party_num > 1:
                     draw_text("> Replay <", font ,60, BLACK,WIDTH/2 , HEIGHT / 2 - 40)
                 else:
