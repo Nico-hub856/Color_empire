@@ -149,7 +149,7 @@ while game:
                 
             if select == 1:
                 if party_num == 1:
-                    draw_text("Color empire", font ,60, BLACK,WIDTH/2 , 180 - 40)
+                    draw_text("COLOR EMPIRE", font ,60, BLACK,WIDTH/2 , 180 - 40)
                 if party_num > 1:
                     draw_text("> Replay <", font ,60, BLACK,WIDTH/2 , HEIGHT / 2 - 40)
                 else:
