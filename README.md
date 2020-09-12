@@ -5,5 +5,3 @@ Cover more of your color to win the game.
 This game can be played by 1 player or 2 players.
 
 WARNING: This game requiered joysticks or else cannot be played.
-
-RELEASE 1920x1080 WILL COME SOON
